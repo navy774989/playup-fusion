@@ -10,15 +10,24 @@ import React
 import UIKit
 class DraftstarsViewController : UIViewController{
   override func viewDidLoad() {
-    
-    let jsCodeLocation = URL(string: "http://localhost:9988/index.bundle?platform=ios")!
-    let rootView = RCTRootView(
+
+    let defaults = UserDefaults.standard
+    defaults.set("draftstars", forKey: "activeApp")
+      CodePush.bundleURL(forResource: "draftstars")
+      CodePush.setDeploymentKey("autd804P7XTFEuxsKeL_dmF7IMUpDOhPSDFUE")
+    #if DEBUG
+      let jsCodeLocation = URL(string: "http://localhost:9988/index.bundle?platform=ios")!
+    #else
+      let jsCodeLocation = CodePush.bundleURL()!
+    #endif
+      let rootView = RCTRootView(
         bundleURL: jsCodeLocation,
         moduleName: "draftStars",
         initialProperties: [:] as [NSObject : AnyObject],
         launchOptions: nil
-    )
-    rootView.backgroundColor = .blue
-    self.view = rootView
+      )
+      self.view = rootView
+
+    
   }
 }

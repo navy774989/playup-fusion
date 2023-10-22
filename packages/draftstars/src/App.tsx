@@ -16,7 +16,7 @@ import {
   useColorScheme,
   View,
 } from 'react-native';
-
+import { SharedUIComponent } from 'portal';
 function App(): JSX.Element {
   const isDarkMode = useColorScheme() === 'dark';
 
@@ -30,14 +30,15 @@ function App(): JSX.Element {
         barStyle={isDarkMode ? 'light-content' : 'dark-content'}
         backgroundColor={backgroundStyle.backgroundColor}
       />
+      <SharedUIComponent onPress={() => {}} />
       {/* <Header /> */}
       <View
         style={{
-          backgroundColor: 'white',
+          backgroundColor: 'red',
           flex: 1,
         }}
       >
-        <Text>DraftStars</Text>
+        <Text>DraftStars iokasfsdfas</Text>
       </View>
     </SafeAreaView>
   );

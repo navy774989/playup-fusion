@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
+    "release-bundle-ios": "appcenter codepush release-react -a playup/Playup-STG  -d Playup --entry-file ../playup/index.js",
     "android": "react-native run-android",
     "ios": "react-native run-ios",
     "lint": "eslint .",
@@ -11,7 +12,8 @@
   },
   "dependencies": {
     "react": "18.2.0",
-    "react-native": "0.72.6"
+    "react-native": "0.72.6",
+    "react-native-code-push": "^8.1.0"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",

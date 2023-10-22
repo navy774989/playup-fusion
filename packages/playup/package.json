@@ -13,12 +13,17 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-native": "^0.72.6",
+    "react-native-code-push": "^8.1.0",
     "react-native-web": "^0.19.9",
     "react-scripts": "5.0.1",
     "typescript": "^4.9.5",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "portal": "*"
   },
   "scripts": {
+    "release-bundle-ios": "appcenter codepush release  -a playup/Playup-STG -d Playup --update-contents-path ./CodePush --target-binary-version 1.0",
+    "package-bundle-ios": "npx react-native bundle --dev false --entry-file index.js --bundle-output CodePush/playup.jsbundle --platform ios --assets-dest CodePush",
+    "bundle-ios": "npx react-native bundle --dev false --entry-file index.js --bundle-output ../playup_native/ios/playup.jsbundle --platform ios --assets-dest ios",
     "start:app": "react-native start",
     "start": "react-scripts start",
     "build": "react-scripts build",

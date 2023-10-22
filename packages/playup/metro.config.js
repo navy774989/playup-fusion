@@ -11,10 +11,18 @@ const config = {
         unstable_enableSymlinks: true,
         unstable_enablePackageExports: true,
     },
-
+    server:{
+        useGlobalHotkey:true
+          },
     watchFolders: [
         path.resolve(__dirname, '../../node_modules'),
+        path.resolve(__dirname, '../../node_modules/portal')
       ],
+      watcher:{
+        healthCheck:{
+          enabled:true
+        }
+      }
 };
 
 module.exports = mergeConfig(getDefaultConfig(__dirname), config);

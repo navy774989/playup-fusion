@@ -15,8 +15,10 @@ import {
   Text,
   useColorScheme,
   View,
+  Image,
 } from 'react-native';
-
+import { SharedUIComponent } from 'portal';
+//Developer/CoreSimulator/Devices/5000B137-E880-43F5-844B-99F43ACBC47A/data/Containers/Data/Application/46DB6BD9-97B5-4310-89A7-C5318CF0CA5D/Library/Application Support/CodePush/codepush.json
 function App(): JSX.Element {
   const isDarkMode = useColorScheme() === 'dark';
 
@@ -30,14 +32,15 @@ function App(): JSX.Element {
         barStyle={isDarkMode ? 'light-content' : 'dark-content'}
         backgroundColor={backgroundStyle.backgroundColor}
       />
+      <SharedUIComponent onPress={() => {}} />
       {/* <Header /> */}
       <View
         style={{
-          backgroundColor: 'white',
+          backgroundColor: 'blue',
           flex: 1,
         }}
       >
-        <Text>Playup</Text>
+        <Text>Playup 123</Text>
       </View>
     </SafeAreaView>
   );

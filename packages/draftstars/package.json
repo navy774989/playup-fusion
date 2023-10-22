@@ -16,9 +16,13 @@
     "react-native-web": "^0.19.9",
     "react-scripts": "5.0.1",
     "typescript": "^4.9.5",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "portal": "*"
   },
   "scripts": {
+    "release-bundle-ios": "appcenter codepush release  -a playup/Playup-STG -d Draftstars --update-contents-path ./CodePush --target-binary-version 1.0",
+    "package-bundle-ios": "npx react-native bundle --dev false --entry-file index.js --bundle-output CodePush/draftstars.jsbundle --platform ios --assets-dest CodePush",
+    "bundle-ios": "npx react-native bundle --dev false --entry-file index.js --bundle-output ../playup_native/ios/draftstars.jsbundle --platform ios",
     "start:app": "react-native start --port 9988",
     "start": "PORT=3006 react-scripts start",
     "build": "react-scripts build",
@@ -59,7 +63,8 @@
     "jest": "^29.2.1",
     "metro-react-native-babel-preset": "0.76.8",
     "prettier": "^2.4.1",
-    "react-test-renderer": "18.2.0"
+    "react-test-renderer": "18.2.0",
+    "reactotron-react-native": "^5.0.3"
   },
   "engines": {
     "node": ">=18"
